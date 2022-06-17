@@ -100,10 +100,12 @@ public class App {
     public String index(ArenaUpdate arenaUpdate) {
 		PlayerState myself = arenaUpdate.arena.state.get(arenaUpdate._links.self.href);
 		//MAP<Coordinate, PlayerState> map = buildMap(arenaUpdate);
-		
+		PlayerState e1 = arenaUpdate.arena.state.get(new Coordinate(mystate.x-1, mystate.y));
+		PlayerState e2 = arenaUpdate.arena.state.get(new Coordinate(mystate.x-2, mystate.y));
+		PlayerState e3 = arenaUpdate.arena.state.get(new Coordinate(mystate.x-3, mystate.y));
 		boolean needRotate = false;
         boolean enemyInRange = false;
-		Collection player = arenaUpdate.arena.state.values();
+		//Collection player = arenaUpdate.arena.state.values();
 		
 		for (int i=0; i<arenaUpdate.arena.state.size(); i++){
 
