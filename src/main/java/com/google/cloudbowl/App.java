@@ -26,17 +26,9 @@ public class App {
         public String direction;
         public Boolean wasHit;
         public Integer score;
-		
-		public Coordinate getCoordinate() {
-      return new Coordinate(x, y);
-    }
+
     }
 
- static class Coordinate {
-
-    Integer x, y;
-  }
-  
     static class Arena {
         public List<Integer> dims;
         public Map<String, PlayerState> state;
@@ -110,7 +102,7 @@ public class App {
     @Produces(MediaType.TEXT_PLAIN)
     @Consumes(MediaType.APPLICATION_JSON)
     public String index(ArenaUpdate arenaUpdate) {
-		PlayerState mystate = arenaUpdate.arena.state.get(arenaUpdate._links.self.href);
+/*		PlayerState mystate = arenaUpdate.arena.state.get(arenaUpdate._links.self.href);
 		//MAP<Coordinate, PlayerState> map = buildMap(arenaUpdate);
 		PlayerState e1 = arenaUpdate.arena.state.get(new Coordinate(mystate.x+1, mystate.y));
 		PlayerState e2 = arenaUpdate.arena.state.get(new Coordinate(mystate.x+2, mystate.y));
@@ -129,7 +121,7 @@ public class App {
 		PlayerState s3 = arenaUpdate.arena.state.get(new Coordinate(mystate.x, mystate.y+3));
 		
 		if mystate.direction 
-		
+	*/
 		boolean needRotate = false;
         boolean enemyInRange = false;
 		
