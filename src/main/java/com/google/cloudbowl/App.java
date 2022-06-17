@@ -101,12 +101,18 @@ public class App {
 		PlayerState myself = arenaUpdate.arena.state.get(arenaUpdate._links.self.href);
 		//MAP<Coordinate, PlayerState> map = buildMap(arenaUpdate);
 		
+		boolean needRotate = false
+        boolean enemyInRange = false
+		
+		arenaUpdate.arena.state.values.for
         System.out.println(arenaUpdate);
         String[] commands = new String[]{"F", "R", "L", "T"};
+		/*
 		if (target()>0)
 			return "T";
 		else if (target()<0)
 			return "F";
+		*/
         int i = new Random().nextInt(4);
         return commands[i];
     }
