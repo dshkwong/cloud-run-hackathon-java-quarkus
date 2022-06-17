@@ -145,7 +145,7 @@ public class App {
 			return "F";
 		*/
 		
-        int i = new Random().nextInt(8);
+        int i = new Random().nextInt(7);
         return commands[i];
     }
 
