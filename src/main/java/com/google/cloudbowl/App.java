@@ -92,15 +92,15 @@ public class App {
 	}
 	*/
 	
-
+	Coordinate lastco;
+	String LastAction;
     @POST
     @Produces(MediaType.TEXT_PLAIN)
     @Consumes(MediaType.APPLICATION_JSON)
     public String index(ArenaUpdate arenaUpdate) {
-		PlayerState myself = arenaUpdate.arena.state.get(arenaUpdate._links.href);
+		PlayerState myself = arenaUpdate.arena.state.get(arenaUpdate._links.self.href);
+		MAP<Coordinate, PlayerState> map = buildMap(arenaUpdate);
 		
-		int playerx[];
-		int playery[];
         System.out.println(arenaUpdate);
         String[] commands = new String[]{"F", "R", "L", "T"};
 		if (target()>0)
