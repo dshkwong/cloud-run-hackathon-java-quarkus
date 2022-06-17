@@ -1,4 +1,4 @@
-package com.google.cloudbowl;
+ 
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -41,12 +41,72 @@ public class App {
         return "Let the battle begin!";
     }
 
+	public int target() {
+		int enemy =0;
+		switch (direction) {
+			case "N":
+				for (int i=0;i< num_player; i++){
+					if (playerx[i] == X) {
+						int temp = Y-playery[i];
+						if ((temp >0) && (temp<3))
+							return 1;
+						else if ((temp>0) && (temp>=3))
+							enemy--;
+				}
+				break;
+			case "S":
+				for (int i=0;i< num_player; i++){
+					if (playerx[i] == X) {
+						int temp = playery[i]-Y;
+						if ((temp >0) && (temp<3))
+							return 1;
+						else if ((temp>0) && (temp>=3))
+							enemy--;
+				}
+				break;
+			case "E":
+				for (int i=0;i< num_player; i++){
+					if (playery[i] == Y) {
+						int temp = playerx[i]-X;
+						if ((temp >0) && (temp<3))
+							return 1;
+						else if ((temp>0) && (temp>=3))
+							enemy--;
+				}
+				break;
+			case "W":
+				for (int i=0;i< num_player; i++){
+					if (playery[i] == Y) {
+						int temp = X-playerx[i];
+						if ((temp >0) && (temp<3))
+							return 1;
+						else if ((temp>0) && (temp>=3))
+							enemy--;
+				}
+				break;
+			default:
+				break;
+		}
+		return enemy;
+					
+	}
+	public int frontplayer(){
+		
+	}
+	
+
     @POST
     @Produces(MediaType.TEXT_PLAIN)
     @Consumes(MediaType.APPLICATION_JSON)
     public String index(ArenaUpdate arenaUpdate) {
+		int playerx[];
+		int playery[];
         System.out.println(arenaUpdate);
         String[] commands = new String[]{"F", "R", "L", "T"};
+		if (target()>0)
+			return "T";
+		else if (target()<0)
+			return "F";
         int i = new Random().nextInt(4);
         return commands[i];
     }
