@@ -40,7 +40,7 @@ public class App {
     public String index() {
         return "Let the battle begin!";
     }
-
+/*
 	public int target() {
 		int enemy =0;
 		switch (direction) {
@@ -90,7 +90,7 @@ public class App {
 		return enemy;
 					
 	}
-	
+	*/
 	
 
     @POST
