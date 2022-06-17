@@ -92,13 +92,13 @@ public class App {
 	}
 	*/
 	
-
-	String LastAction;
+	//Coordinate lastco;
+	//String LastAction;
     @POST
     @Produces(MediaType.TEXT_PLAIN)
     @Consumes(MediaType.APPLICATION_JSON)
     public String index(ArenaUpdate arenaUpdate) {
-		PlayerState myself = arenaUpdate.arena.state.get(arenaUpdate._links.self.Coordinatehref);
+		PlayerState myself = arenaUpdate.arena.state.get(arenaUpdate._links.self.href);
 		//MAP<Coordinate, PlayerState> map = buildMap(arenaUpdate);
 		
         System.out.println(arenaUpdate);
