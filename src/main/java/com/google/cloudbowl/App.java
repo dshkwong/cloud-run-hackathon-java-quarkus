@@ -137,7 +137,7 @@ public class App {
 		
 		
         System.out.println(arenaUpdate);
-        String[] commands = new String[]{"R", "L", "F","F","F", "T", "T", "T"};
+        String[] commands = new String[]{"R", "F","F","F", "T", "T", "T"};
 		/*
 		if (target()>0)
 			return "T";
