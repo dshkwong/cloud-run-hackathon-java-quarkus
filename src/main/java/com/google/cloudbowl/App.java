@@ -26,16 +26,16 @@ public class App {
         public String direction;
         public Boolean wasHit;
         public Integer score;
-		public Coordinate getCoordinate() {
+/*		public Coordinate getCoordinate() {
 			return new Coordinate(x, y);
-		}
+		}*/
     }
 
-static class Coordinate {
+/*static class Coordinate {
 
     Integer x, y;
   }
-
+*/
     static class Arena {
         public List<Integer> dims;
         public Map<String, PlayerState> state;
@@ -127,7 +127,9 @@ static class Coordinate {
 		PlayerState s2 = arenaUpdate.arena.state.get(new Coordinate(mystate.x, mystate.y+2));
 		PlayerState s3 = arenaUpdate.arena.state.get(new Coordinate(mystate.x, mystate.y+3));
 		
-		if mystate.direction.equals("N")
+		if mystate.direction.equals("N") {
+			if (n1==null)
+		}
 			
 	*/
 		boolean needRotate = false;
