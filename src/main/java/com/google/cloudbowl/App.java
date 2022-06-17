@@ -137,7 +137,7 @@ public class App {
 		
 		
         System.out.println(arenaUpdate);
-        String[] commands = new String[]{"R","R", "L", "L", "T","T","T", "T", "T", "T","F",};
+        String[] commands = new String[]{"R", "L", "F","F","F", "T", "T", "T"};
 		/*
 		if (target()>0)
 			return "T";
@@ -145,7 +145,7 @@ public class App {
 			return "F";
 		*/
 		
-        int i = new Random().nextInt(10);
+        int i = new Random().nextInt(8);
         return commands[i];
     }
 
