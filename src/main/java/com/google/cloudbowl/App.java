@@ -26,8 +26,15 @@ public class App {
         public String direction;
         public Boolean wasHit;
         public Integer score;
-
+		public Coordinate getCoordinate() {
+			return new Coordinate(x, y);
+		}
     }
+
+static class Coordinate {
+
+    Integer x, y;
+  }
 
     static class Arena {
         public List<Integer> dims;
@@ -120,14 +127,15 @@ public class App {
 		PlayerState s2 = arenaUpdate.arena.state.get(new Coordinate(mystate.x, mystate.y+2));
 		PlayerState s3 = arenaUpdate.arena.state.get(new Coordinate(mystate.x, mystate.y+3));
 		
-		if mystate.direction 
+		if mystate.direction.equals("N")
+			
 	*/
 		boolean needRotate = false;
         boolean enemyInRange = false;
 		
 		
         System.out.println(arenaUpdate);
-        String[] commands = new String[]{"R", "L", "T"};
+        String[] commands = new String[]{"R","R", "L", "L", "T","T","T", "T", "T", "T","F",};
 		/*
 		if (target()>0)
 			return "T";
@@ -135,7 +143,7 @@ public class App {
 			return "F";
 		*/
 		
-        int i = new Random().nextInt(3);
+        int i = new Random().nextInt(10);
         return commands[i];
     }
 
