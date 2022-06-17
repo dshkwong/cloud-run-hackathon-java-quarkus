@@ -5,6 +5,8 @@ import javax.ws.rs.core.MediaType;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
+import java.awt.geom.Point2D;
+import java.lang.Object;
 
 
 @Path("/{s:.*}")
