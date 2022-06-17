@@ -90,15 +90,15 @@ public class App {
 		return enemy;
 					
 	}
-	public int frontplayer(){
-		
-	}
+	
 	
 
     @POST
     @Produces(MediaType.TEXT_PLAIN)
     @Consumes(MediaType.APPLICATION_JSON)
     public String index(ArenaUpdate arenaUpdate) {
+		PlayerState myself = arenaUpdate.arena.state.get(arenaUpdate._links.href);
+		
 		int playerx[];
 		int playery[];
         System.out.println(arenaUpdate);
