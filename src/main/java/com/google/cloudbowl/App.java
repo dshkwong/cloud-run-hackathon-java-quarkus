@@ -98,7 +98,7 @@ public class App {
     @Produces(MediaType.TEXT_PLAIN)
     @Consumes(MediaType.APPLICATION_JSON)
     public String index(ArenaUpdate arenaUpdate) {
-		PlayerState myself = arenaUpdate.arena.state.get(arenaUpdate._links.self.href);
+		PlayerState mystate = arenaUpdate.arena.state.get(arenaUpdate._links.self.href);
 		//MAP<Coordinate, PlayerState> map = buildMap(arenaUpdate);
 		PlayerState e1 = arenaUpdate.arena.state.get(new Coordinate(mystate.x+1, mystate.y));
 		PlayerState e2 = arenaUpdate.arena.state.get(new Coordinate(mystate.x+2, mystate.y));
@@ -108,7 +108,6 @@ public class App {
 		PlayerState w2 = arenaUpdate.arena.state.get(new Coordinate(mystate.x-2, mystate.y));
 		PlayerState w3 = arenaUpdate.arena.state.get(new Coordinate(mystate.x-3, mystate.y));
 		
-		
 		PlayerState n1 = arenaUpdate.arena.state.get(new Coordinate(mystate.x, mystate.y-1));
 		PlayerState n2 = arenaUpdate.arena.state.get(new Coordinate(mystate.x, mystate.y-2));
 		PlayerState n3 = arenaUpdate.arena.state.get(new Coordinate(mystate.x, mystate.y-3));
@@ -117,12 +116,13 @@ public class App {
 		PlayerState s2 = arenaUpdate.arena.state.get(new Coordinate(mystate.x, mystate.y+2));
 		PlayerState s3 = arenaUpdate.arena.state.get(new Coordinate(mystate.x, mystate.y+3));
 		
+		
 		boolean needRotate = false;
         boolean enemyInRange = false;
 		
 		
         System.out.println(arenaUpdate);
-        String[] commands = new String[]{"F", "R", "L", "T"};
+        String[] commands = new String[]{"R", "L", "T"};
 		/*
 		if (target()>0)
 			return "T";
@@ -130,7 +130,7 @@ public class App {
 			return "F";
 		*/
 		
-        int i = new Random().nextInt(4);
+        int i = new Random().nextInt(3);
         return commands[i];
     }
 
